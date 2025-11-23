@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+*.log
+
+# Airflow (Local Runtime Files)
+# We ignore this because it contains your local DB connections and logs
+airflow_local/
+airflow.db
+airflow.cfg
+webserver_config.py
+unittests.cfg
+
+# dbt (Generated Artifacts)
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
+
+# IDE settings
+.vscode/
+.idea/
+.DS_Store
+
+# SECRETS (Most Important!)
+.env
+*.txt
+secrets.json
