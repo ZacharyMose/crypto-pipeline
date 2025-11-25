@@ -4,6 +4,10 @@ import boto3
 import os
 import logging
 from datetime import datetime
+from dotenv import load_dotenv
+
+# 1. Load Environment Variables
+load_dotenv()
 
 # Setup Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -53,7 +57,7 @@ def fetch_and_upload():
             Body=json.dumps(data),
             ContentType='application/json'
         )
-        logger.info(f"✅ Success! Data uploaded to s3://{bucket_name}/{file_name}")
+        logger.info(f"Success! Data uploaded to s3://{bucket_name}/{file_name}")
     except Exception as e:
         logger.error(f"S3 Upload failed: {e}")
         raise
